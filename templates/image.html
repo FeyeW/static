@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+<script th:src="@{/js/axios.min.js}"></script>
+<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+<body>
+<div class="main">
+    <input type="text" id="textInput">
+    <button onclick="generateContent()">生成</button>
+</div>
+
+</body>
+
+<script>
+
+    const pc = new RTCPeerConnection();
+    pc.addTransceiver('video', {'direction': 'inactive'});
+    pc.createDataChannel('');
+    pc.createOffer().then(function(offer) {
+        return pc.setLocalDescription(offer);
+    })
+    function generateContent() {
+        var content = document.getElementById("textInput").value;
+        console.log('文本内容：', content);
+        axios.post('/casetify/QRcode/create', {"content":content}).then(function (res) {
+            //回调函数
+            console.log(res)
+            var base64Image = res.data;
+
+            var oldImg = document.getElementsByClassName("ewmImg");
+            if (oldImg.length > 0 ){
+                oldImg[0].remove();
+            }
+            // 创建图片元素
+            var img = document.createElement('img');
+            // 设置图片源为Base64编码
+            img.src = base64Image;
+            img.className = "ewmImg" ;
+            // 将图片显示在页面上
+            document.body.appendChild(img);
+            // document.getElementById("authI").innerHTML = str
+
+        });
+
+    }
+
+</script>
+
+</html>

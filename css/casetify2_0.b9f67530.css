@@ -1,0 +1,826 @@
+/*
+====== ====== ====== ====== ====== ======
+CASETiFY CSS 2.0 
+====== ====== ====== ====== ====== ======
+*/
+
+:root {
+
+  /* Color */
+  --color-orange                          : #F15B41;
+  --color-lilac                           : #E4C0D3;
+  --color-blue                            : #2C5DAB;
+  --color-yellow                          : #F6E163;
+  --color-green                           : #21A664;
+  --color-pink                            : #F6A19B;
+  --color-gold                            : #BB9731;
+  --color-light-orange                    : #F68B58;
+  --color-nude                            : #FDDBCA;
+
+  --color-white                           : #FFFFFF;
+  --color-black-3                         : #f7f7f7;
+  --color-black-6                         : #F0f0f0;
+  --color-black-9                         : #E8e8e8;
+  --color-black-15                        : #D9d9d9;
+  --color-black-30                        : #B2b2b2;
+  --color-black-45                        : #8c8c8c;
+  --color-black-60                        : #666666;
+  --color-black-75                        : #404040;
+  --color-black-90                        : #191919;
+  --color-black                           : #000000;
+  --color-danger                          : #DC3545;
+  --color-success                         : #28a745;
+
+  /* Generic */
+  --line-height-single                    : 1;
+  --letter-spacing-narrow                 : -.15px;
+  --stroke-width                          : 1px;
+  --border-radius                         : 3px;
+
+  /* Heading */
+  --heading-font-size-h1                  : 48px;
+  --heading-font-size-h2                  : 36px;
+  --heading-font-size-h3                  : 30px;
+  --heading-font-size-h4                  : 24px;
+  --heading-font-size-h5                  : 18px;
+  --heading-font-size-h6                  : 15px;
+  --heading-font-size-h7                  : 13px;
+  --heading-font-size-h8                  : 12px;
+  --heading-font-weight                   : 900;
+  --heading-letter-spacing                : 0px;
+  --heading-line-height                   : 1.2;
+  --heading-display                       : block;
+  --heading-font-family                   : 'Pangram';
+
+  /* Heading -- Bebas Neue Pro */
+  --heading-bebas-neue-pro-font-size-h1   : 30px;
+  --heading-bebas-neue-pro-font-size-h2   : 21px;
+  --heading-bebas-neue-pro-font-size-h3   : 15px;
+  --heading-bebas-neue-pro-font-weight    : 700;
+  --heading-bebas-neue-pro-letter-spacing : .15px;
+  --heading-bebas-neue-pro-line-height    : 1.2;
+  --heading-bebas-neue-pro-font-family    : 'Bebas Neue Pro';
+
+  /* Text */
+  --text-font-size-p1                     : 18px;
+  --text-font-size-p2                     : 15px;
+  --text-font-size-p3                     : 13px;
+  --text-font-size-p4                     : 12px;
+  --text-font-weight                      : 600;
+  --text-letter-spacing                   : .15px;
+  --text-line-height                      : 1.4;
+  --text-display                          : block;
+  --text-font-family                      : 'HelveticaNeue';
+
+  /* Button */
+  --button-font-size                      : var(--text-font-size-p2);
+  --button-border                         : var(--button-border-width) solid;
+  --button-letter-spacing                 : 2.4px;
+  --button-line-height                    : var(--line-height-single);
+  --button-padding                        : 15px 30px;
+  --button-font-weight                    : var(--text-font-weight);
+  --button-font-family                    : var(--text-font-family);
+  --button-text-transform                 : uppercase;
+  --button-border-width                   : var(--stroke-width);
+
+  /* Announcement Bar */
+  --announcement-bar-background-color     : var(--color-orange);
+  --announcement-bar-color                : var(--color-white);
+  --announcement-bar-padding              : 6px 15px;
+  --announcement-bar-link-color           : var(--color-black-60);
+
+  /* Header */
+  --header-logo-height                    : 40px;
+  --header-logo-width                     : 120px;
+
+  /* Footer */
+  --footer-newsletter-                    : ;
+  --footer-social-                        : ;
+  --footer-trustpilot-                    : ;
+  --footer-copyright-                     : ;
+
+}
+
+@media only screen and (min-width: 992px) {
+  :root {
+    /* Enlarged texts on desktop */
+    --text-font-size-p1                     : 24px;
+    --text-font-size-p2                     : 18px;
+    --text-font-size-p3                     : 15px;
+    --text-font-size-p4                     : 13px;
+    --text-font-weight                      : 600;
+  }
+}
+
+
+/* 
+====== ====== ====== ====== ====== ======
+  Typography
+====== ====== ====== ====== ====== ======
+*/
+
+  /* Font */
+
+  @font-face {
+    font-family: 'Buenos Aires';
+    font-display: swap;
+    src: url('../fonts/buenosaires-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/buenosaires-semibold-webfont.woff') format('woff');
+    font-weight: 600;
+    font-style: normal
+  }
+
+  @font-face {
+    font-family: 'Pangram';
+    font-display: swap;
+    src: url('../fonts/pangram-black-webfont.woff2') format('woff2'),
+         url('../fonts/pangram-black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal
+  }
+
+  @font-face {
+    font-family: 'Bebas Neue Pro';
+    font-display: swap;
+    src: url('../fonts/bebas-neue-pro-bold.woff2') format('woff2'),
+         url('../fonts/bebas-neue-pro-bold.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  /* Heading */
+
+  .Heading {
+    font-weight: var(--heading-font-weight) !important;
+    letter-spacing: var(--heading-letter-spacing) !important;
+    line-height: var(--heading-line-height) !important;
+    display: var(--heading-display) !important;
+    font-family: var(--heading-font-family) !important;
+  }
+  .Heading.u-h1 {
+    font-size: var(--heading-font-size-h1) !important;
+  }
+  .Heading.u-h2 {
+    font-size: var(--heading-font-size-h2) !important;
+  }
+  .Heading.u-h3 {
+    font-size: var(--heading-font-size-h3) !important;
+  }
+  .Heading.u-h4 {
+    font-size: var(--heading-font-size-h4) !important;
+  }
+  .Heading.u-h5 {
+    font-size: var(--heading-font-size-h5) !important;
+  }
+  .Heading.u-h6 {
+    font-size: var(--heading-font-size-h6) !important;
+  }
+  .Heading.u-h7 {
+    font-size: var(--heading-font-size-h7) !important;
+  }
+  .Heading.u-h8 {
+    font-size: var(--heading-font-size-h8) !important;
+  }
+
+  /* Heading -- Bebas Neue Pro */
+  .Heading--BebasNeuePro {
+    font-weight: var(--heading-bebas-neue-pro-font-weight) !important;
+    letter-spacing: var(--heading-bebas-neue-pro-letter-spacing) !important;
+    line-height: var(--heading-bebas-neue-pro-line-height) !important;
+    display: block !important;
+    font-family: var(--heading-bebas-neue-pro-font-family) !important;
+  }
+  .Heading--BebasNeuePro.u-h1 {
+    font-size: var(--heading-bebas-neue-pro-font-size-h1) !important;
+  }
+  .Heading--BebasNeuePro.u-h2 {
+    font-size: var(--heading-bebas-neue-pro-font-size-h2) !important;
+  }
+  .Heading--BebasNeuePro.u-h3 {
+    font-size: var(--heading-bebas-neue-pro-font-size-h3) !important;
+  }
+
+  /* Text */
+
+  .Text {
+    line-height: var(--text-line-height) !important;
+    display: var(--text-display) !important;
+    letter-spacing: var(--text-letter-spacing) !important;
+    font-family: var(--text-font-family) !important;
+    margin: unset !important;
+  }
+  .Text.u-p1 {
+    font-size: var(--text-font-size-p1) !important;
+  }
+  .Text.u-p2 {
+    font-size: var(--text-font-size-p2) !important;
+  }
+  .Text.u-p3 {
+    font-size: var(--text-font-size-p3) !important;
+  }
+  .Text.u-p4 {
+    font-size: var(--text-font-size-p4) !important;
+  }
+
+  /* Button */
+
+  .Button {
+    font-size: var(--button-font-size) !important;
+    font-weight: var(--button-font-weight)  !important;
+    letter-spacing: var(--button-letter-spacing) !important;
+    line-height: var(--button-line-height) !important;
+    border: var(--button-border) !important;
+    padding: var(--button-padding) !important;
+    font-family: var(--button-font-family) !important;
+    text-transform: var(--button-text-transform) !important;
+    border-radius: var(--border-radius) !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    width: fit-content;
+  }
+  .Button.Primary.Orange {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+    color: var(--color-white);
+  }
+  .Button.Primary.Black {
+    background-color: var(--color-black);
+    border-color: var(--color-black);
+    color: var(--color-white);
+  }
+  .Button.Primary.Gold {
+    background-color: var(--color-gold);
+    border-color: var(--color-gold);
+    color: var(--color-white);
+  }
+  .Button.Secondary.Black {
+    background-color: var(--color-white);
+    border-color: var(--color-black);
+    color: var(--color-black);
+  }
+  .Button.NoPadding {
+    padding-left: unset;
+    padding-right: unset;
+  }
+  .Button.Disabled {
+    opacity: .15;
+    cursor: no-drop;
+  }
+  .Button.FullWidth {
+    width: 100%;
+    justify-content: center;
+  }
+
+/* 
+====== ====== ====== ====== ====== ======
+  Generic
+====== ====== ====== ====== ====== ======
+*/
+
+  /* Typography */
+  .Heading.u-lh1, .Text.u-lh1, .Heading--BebasNeuePro.u-lh1 {
+    line-height: var(--line-height-single) !important;
+  }
+
+  .Heading.Inline, .Text.Inline, .Heading--BebasNeuePro.Inline {
+    display: inline;
+  }
+
+  .Heading.Uppercase, .Text.Uppercase, .Heading--BebasNeuePro.Uppercase {
+    text-transform: uppercase;  
+  }
+
+  .Heading.Narrow, .Text.Narrow, .Heading--BebasNeuePro.Narrow {
+    letter-spacing: var(--letter-spacing-narrow);
+  }
+
+  /* Color */
+  .Heading.Black, .Text.Black, .Heading--BebasNeuePro.Black {
+    color: var(--color-black);
+  }
+
+  .Heading.Black--45, .Text.Black--45, .Heading--BebasNeuePro.Black--45 {
+    color: var(--color-black-45);
+  }
+
+  .Heading.White, .Text.White, .Heading--BebasNeuePro.White {
+    color: var(--color-white);
+  }
+
+  .Heading.Orange, .Text.Orange, .Heading--BebasNeuePro.Orange {
+    color: var(--color-orange);
+  }
+
+  /* Alignment */
+  .Heading.Center , .Text.Center, .Heading--BebasNeuePro.Center  {
+    text-align: center;
+  }
+  .Position--Relative {
+    position: relative;
+  }
+  .Button.Center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Spacing */
+  .Heading ~ .Heading.Secondary {
+    margin-top: 6px;
+  }
+
+  .Section {
+    padding: 60px 15px;
+  }
+  .Section.Horizontal {
+    padding-top: unset;
+    padding-bottom: unset;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .Section {
+      padding: 90px 0;
+    }
+  }
+
+  /* Form */
+  .Dropdown {
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight) ;
+    letter-spacing: var(--text-letter-spacing);
+    line-height: var(--button-line-height);
+    color: var(--button-color);
+    background-color: var(--color-black-3);
+    border: var(--button-border);
+    border-color: var(--color-black-3);
+    padding: 15px calc(15px + 9px + 3px) 15px 15px;
+    font-family: var(--button-font-family);
+    border-radius: var(--border-radius);
+    text-align: left;
+    cursor: pointer;
+    appearance: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    background-image: url('data:image/svg+xml,%3Csvg id="Group_3324" data-name="Group 3324" xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"%3E%3Cg id="Rectangle_2203" data-name="Rectangle 2203" fill="%23fff" stroke="%23707070" stroke-width="1" opacity="0"%3E%3Crect width="9" height="9" stroke="none"/%3E%3Crect x="0.5" y="0.5" width="8" height="8" fill="none"/%3E%3C/g%3E%3Cpath id="Icon_ionic-md-arrow-dropdown" data-name="Icon ionic-md-arrow-dropdown" d="M9,13.5,13.5,18,18,13.5Z" transform="translate(-9 -10.8)"/%3E%3C/svg%3E%0A');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) 50%;
+  }
+
+  /* Animation */
+  .Featured.Target:after, .Featured .Target:after {
+    content: '';
+    position: absolute;
+    width: calc(100% / 3 * 2);
+    height: 100%;
+    mix-blend-mode: overlay;
+    z-index: 1;
+    opacity: 0;
+    top: 0;
+    left: -115%;
+    animation: Animation__Featured__Reflect 3.6s ease infinite;
+    -o-animation: Animation__Featured__Reflect 3.6s ease infinite;
+    -ms-animation: Animation__Featured__Reflect 3.6s ease infinite;
+    -moz-animation: Animation__Featured__Reflect 3.6s ease infinite;
+    -webkit-animation: Animation__Featured__Reflect 3.6s ease infinite;
+    background-color: var(--color-white);
+    transform: skewX(-45deg) ;
+    -o-transform: skewX(-45deg) ;
+    -ms-transform: skewX(-45deg) ;
+    -moz-transform: skewX(-45deg) ;
+    -webkit-transform: skewX(-45deg) ;
+  }
+
+  @keyframes Animation__Featured__Reflect {
+    0% {left: -115%; opacity: 0;}
+    10% {opacity: .45;}
+    20% {left: 115%; opacity: 0;}
+    100% {left: 115%; opacity: 0;}
+  }
+
+  @-o-keyframes Animation__Featured__Reflect {
+    0% {left: -115%; opacity: 0;}
+    10% {opacity: .45;}
+    20% {left: 115%; opacity: 0;}
+    100% {left: 115%; opacity: 0;}
+  }
+
+  @-ms-keyframes Animation__Featured__Reflect {
+    0% {left: -115%; opacity: 0;}
+    10% {opacity: .45;}
+    20% {left: 115%; opacity: 0;}
+    100% {left: 115%; opacity: 0;}
+  }
+
+  @-moz-keyframes Animation__Featured__Reflect {
+    0% {left: -115%; opacity: 0;}
+    10% {opacity: .45;}
+    20% {left: 115%; opacity: 0;}
+    100% {left: 115%; opacity: 0;}
+  }
+
+  @-webkit-keyframes Animation__Featured__Reflect {
+    0% {left: -115%; opacity: 0;}
+    10% {opacity: .45;}
+    20% {left: 115%; opacity: 0;}
+    100% {left: 115%; opacity: 0;}
+  }
+
+/* 
+====== ====== ====== ====== ====== ======
+  Snippet
+====== ====== ====== ====== ====== ======
+*/
+
+  /* Product Card */
+  .Product__Card {
+    margin: unset;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100vw - 15px * 3);
+    overflow: hidden;
+    padding-right: 15px;
+    box-sizing: content-box;
+  }
+
+  .Product__Card:last-child {
+    padding-right: unset;
+  }
+  .Product__Card .Product__Card--Meta:not(:first-child) {
+    margin-top: 6px;
+  }
+  .Product__Card .Product__Card--Meta.Thumbnail {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+  .Product__Card .Product__Card--Meta.Thumbnail:before {
+    content: "";
+    padding-top: 100%;
+    width: 100%;
+    display: block;
+  }
+  .Product__Card .Product__Card--Meta.Thumbnail img {
+    width: 100%;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+  }
+  .Product__Card .Product__Card--Meta.Description p {
+    margin-bottom: unset;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+  }
+  .Product__Card .Product__Card--Meta.Description p:not(:first-child) {
+    margin-top: 3px;
+  }
+  .Product__Card .Product__Card--Meta .Price {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  .Product__Card .Product__Card--Meta .Discounted ~ .Strikethrough {
+    text-decoration: line-through;
+  }
+  .Product__Card .Product__Card--Meta .Discounted {
+    margin-left: 3px;
+    color: var(--color-orange);
+  }
+  .Product__Card .Product__Card--Meta.Option {
+    overflow: hidden;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper {
+    display: block;
+    overflow: auto;
+    padding: unset;
+    list-style: none;
+    white-space: nowrap;
+    text-align: center;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper .Variant {
+  display: inline-block;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper .Variant:not(:last-child) {
+    padding-right: 6px;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper .Variant a {
+    width: 30px;
+    height: 30px;
+    margin: unset;
+    display: block;
+    border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    position: relative;
+    cursor: pointer;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper .Variant a.active {
+    border: calc(var(--stroke-width) * 4) solid var(--color-white);
+    box-sizing: border-box;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper .Variant a.active:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    border: calc(var(--stroke-width) * 2) solid var(--color-orange);
+    box-sizing: border-box;
+    padding: 13px;
+    top: -4px;
+    left: -4px;
+  }
+  .Product__Card .Product__Card--Meta .Variant__Wrapper .Variant a:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: inset 0px 2px 0px 0px rgba(0,0,0,.3);
+    border-radius: 50%;
+  }
+  .Product__Card .Product__Card--Dropdown {
+    margin-top: 15px;
+  }
+  .Product__Card .Product__Card--CTA {
+    margin-top: 15px;
+  }
+  .Product__Card .Product__Card--CTA .Button.selected {
+    background-color: var(--color-orange);
+    border-color: var(--color-orange);
+    color: var(--color-white);
+    background-image: url('../fonts/055202c0a81d434c8c101cef4d64c2df.woff');
+    background-repeat: no-repeat;
+    background-position: calc(100% - 15px) 50%;
+    background-size: 15px;
+  }
+  .Product__Card .Product__Card--CTA .Button ~ .Dropdown {
+    margin-top: 9px;
+  }
+
+  /* Artwork Badge */
+  .Artwork__Badge__Wrapper {
+    position: absolute;
+    height: 90px;
+    width: 90px;
+    z-index: 2;
+    transform-origin: right top;
+    pointer-events: none;
+    top: 15px;
+    left: 15px;
+  }
+  .Artwork__Badge__Wrapper.Small {
+    left: unset;
+    top: unset;
+    transform: scale(calc(1 / 3 * 2));
+  }
+  @media only screen and (min-width: 992px) {
+    .Artwork__Badge__Wrapper.Small {
+      transform: scale(calc(1 - 1 / 6));
+    }
+  }
+  .Artwork__Badge__Wrapper.NoTouch {
+    left: -10vw;
+  }
+  .Artwork__Badge__Wrapper.Small.NoTouch {
+    left: -46px;
+  }
+  @media only screen and (min-width: 768px) {
+    .Artwork__Badge__Wrapper.NoTouch {
+      left: -4vw;
+    }
+    .Artwork__Badge__Wrapper.Small.NoTouch {
+      left: -46px;
+    }
+  }
+  .Artwork__Badge {
+    height: 90px;
+    width: 90px;
+    background-color: var(--color-blue);
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    clip-path: circle(50% at 50% 50%);
+    transform: rotate(-7.5deg);
+  }
+  .Artwork__Badge.Featured {
+    background-color: var(--color-gold);
+  }
+
+  .Artwork__Badge.Featured:before {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+    padding: 2px;
+    border: 1px solid var(--color-white);
+    box-sizing: border-box;
+    border-radius: 50%;
+  }
+
+  .Artwork__Badge.Featured:after {
+    transform: rotate(7.5deg);
+  }
+
+  .Artwork__Badge span {
+    width: 100%;
+    position: relative;
+    right: calc(var(--heading-letter-spacing) * -1);
+    box-sizing: border-box;
+    white-space: normal;
+  }
+
+  .Artwork__Badge span + span {
+    margin-top: 3px;
+  }
+
+  .Artwork__Badge sub {
+    vertical-align: baseline;
+    bottom: unset;
+  }
+
+  /* Promotion Bar */
+  @media only screen and (max-width: 767px) {
+    .Promotion__Bar__Wrapper {
+      margin: 0 -15px;
+    }
+  }
+  .Promotion__Bar {
+    width: 100%;
+    display: grid;
+    background-color: var(--color-black);
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .Promotion__Bar span {
+    padding: 6px 9px;
+    position: relative;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  .Promotion__Bar span:not(:last-child) {
+    border-right: 1px solid var(--color-white);
+  }
+  .Promotion__Bar.Featured span.Target {
+    background-color: #bb9731;
+  }
+
+  /* Item Option Badge */
+  .Item__Option__Badge__Wrapper {
+    position: absolute;
+    z-index: 1;
+    top: 9px;
+    right: 9px;
+    display: flex;
+  }
+  .Item__Option__Badge {
+    display: inline-block;
+    border-radius: 3px;
+    position: relative;
+  }
+  .Item__Option__Badge.Featured {
+    background-color: var(--color-gold);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+
+  .Item__Option__Badge.Featured span {
+    padding: 3px 4.5px;
+  }
+
+/* Dekstop */
+@media only screen and (min-width: 768px) {
+  .Section {
+    padding: 90px 0px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* 
+====== ====== ====== ====== ====== ======
+  Post-checkout Cross-selling
+====== ====== ====== ====== ====== ======
+*/
+
+#Post__Checkout__Cross__Selling[version="202011031041"] {
+  padding-top: 15px;
+  padding-bottom: 60px;
+  margin-bottom: 60px;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"]:after {
+  content: '';
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-black-15);
+  display: block;
+  margin-top: 60px;
+  margin-left: unset;
+  position: absolute;
+  left: 0;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Banner__Wrapper {
+  padding: 15px;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Banner__Wrapper:before {
+  content: '';
+  background-color: var(--color-orange);
+  opacity: .06;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Banner__Wrapper h3 {
+  margin: unset;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Banner__Wrapper h4 {
+  margin-bottom: unset;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Banner__Wrapper h4 ~ p {
+  margin-bottom: unset;
+  margin-top: 6px;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Deals__Container {
+  margin-top: 30px;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Deals__Container .Deal__Wrapper:not(:last-child) {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: var(--stroke-width) solid var(--color-black-15);
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Deals__Container .Deal__Wrapper > .Heading {
+  margin: unset;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Deals__Container .Deal__Wrapper > .Deal__Item__Wrapper {
+  margin-top: 15px;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 15px;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Checkout__Wrapper {
+  margin-top: 30px;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Checkout__Wrapper .Button {
+  margin-top: 9px;
+  display: block;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Checkout__Wrapper p {
+  margin-bottom: unset;
+}
+#Post__Checkout__Cross__Selling[version="202011031041"] .Checkout__Wrapper p:last-child {
+  margin-top: 6px;
+  color: var(--color-black-45);
+}
+
+@media only screen and (min-width: 768px) {
+
+  #Post__Checkout__Cross__Selling[version="202011031041"] {
+    padding-top: 30px;
+  }
+
+  #Post__Checkout__Cross__Selling[version="202011031041"] .Banner__Wrapper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #Post__Checkout__Cross__Selling[version="202011031041"] .Deals__Container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 15px;
+  }
+  #Post__Checkout__Cross__Selling[version="202011031041"] .Deals__Container .Deal__Wrapper:not(:last-child) {
+    border-bottom: unset;
+    padding-bottom: unset;
+    margin-bottom: unset;
+  }
+  #Post__Checkout__Cross__Selling[version="202011031041"] .Checkout__Wrapper {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+/*
+====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ======
+  End of CASETiFY CSS 2.0
+====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ====== ======
